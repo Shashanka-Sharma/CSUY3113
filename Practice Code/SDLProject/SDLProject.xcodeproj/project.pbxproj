@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFF17557267F9A200063C67F /* george_0.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFF17556267F9A130063C67F /* george_0.png */; };
+		CFF1755B268108470063C67F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFF17559268108470063C67F /* Entity.cpp */; };
+		CFF1755F26811FF40063C67F /* ctg.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFF1755E26811FC60063C67F /* ctg.png */; };
+		CFF17573268A59CD0063C67F /* platformPack_tile001.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFF17572268A59C20063C67F /* platformPack_tile001.png */; };
+		CFF17576268E79F50063C67F /* font2.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFF17575268E79E80063C67F /* font2.png */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -25,12 +30,22 @@
 			dstSubfolderSpec = 6;
 			files = (
 				DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */,
+				CFF17557267F9A200063C67F /* george_0.png in CopyFiles */,
+				CFF17573268A59CD0063C67F /* platformPack_tile001.png in CopyFiles */,
+				CFF17576268E79F50063C67F /* font2.png in CopyFiles */,
+				CFF1755F26811FF40063C67F /* ctg.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CFF17556267F9A130063C67F /* george_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = george_0.png; sourceTree = "<group>"; };
+		CFF17559268108470063C67F /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		CFF1755A268108470063C67F /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		CFF1755E26811FC60063C67F /* ctg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ctg.png; sourceTree = "<group>"; };
+		CFF17572268A59C20063C67F /* platformPack_tile001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformPack_tile001.png; sourceTree = "<group>"; };
+		CFF17575268E79E80063C67F /* font2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font2.png; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* SDLProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDLProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -81,12 +96,18 @@
 		DBDF1B512323DE3F007CECB1 /* SDLProject */ = {
 			isa = PBXGroup;
 			children = (
+				CFF17572268A59C20063C67F /* platformPack_tile001.png */,
 				DBDF1B5B2323DE8D007CECB1 /* glm */,
 				DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */,
 				DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */,
+				CFF1755E26811FC60063C67F /* ctg.png */,
 				DBDF1B5C2323DE8D007CECB1 /* shaders */,
 				DBDF1B5A2323DE8D007CECB1 /* stb_image.h */,
 				DBDF1B522323DE3F007CECB1 /* main.cpp */,
+				CFF17575268E79E80063C67F /* font2.png */,
+				CFF17556267F9A130063C67F /* george_0.png */,
+				CFF17559268108470063C67F /* Entity.cpp */,
+				CFF1755A268108470063C67F /* Entity.h */,
 			);
 			path = SDLProject;
 			sourceTree = "<group>";
@@ -160,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */,
+				CFF1755B268108470063C67F /* Entity.cpp in Sources */,
 				DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

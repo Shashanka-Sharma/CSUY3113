@@ -153,7 +153,7 @@ void ProcessInput() {
             case SDL_KEYDOWN:
                 switch(event.key.keysym.sym){
                     case SDLK_SPACE:
-                        ball_speed = 2.0f;
+                        ball_speed = 2.5f;
                         
                 }
         }
@@ -161,18 +161,18 @@ void ProcessInput() {
     const Uint8 *keys = SDL_GetKeyboardState(NULL);
     
     if (keys[SDL_SCANCODE_UP] && playerA_position.y < 3.2f) {
-        playerA_movement.y = 1.0f;
+        playerA_movement.y = 5.5f;
         
     }
     else if (keys[SDL_SCANCODE_DOWN] && playerA_position.y > -3.2f){
-        playerA_movement.y = -1.0f;
+        playerA_movement.y = -5.5f;
     }
     
     if (keys[SDL_SCANCODE_W] && playerB_position.y < 3.2f) {
-        playerB_movement.y = 1.0f;
+        playerB_movement.y = 5.5f;
     }
     else if (keys[SDL_SCANCODE_S] && playerB_position.y > -3.25f) {
-        playerB_movement.y = -1.0f;
+        playerB_movement.y = -5.5f;
     }
    
     
