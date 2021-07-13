@@ -66,7 +66,8 @@ void Entity::Update(float deltaTime, Entity* player, Entity *platforms, int plat
 
 bool Entity::CheckCollision(Entity *other) {
     
-    //if (isActive == false || other->isActive == false) return false;
+    if (isActive == false || other->isActive == false) return false;
+    if (this == other) return false;
     
     float xdist = fabs(position.x - other->position.x) -
     ((width + other->width) / 2.0f);
@@ -109,7 +110,7 @@ void Entity::CheckCollisionsY(Entity *objects, int objectCount,
 //            float ydist = fabs(position.y - enemy->position.y);
 //            float penetrationY = fabs(ydist - (height / 2.0f) - (enemy->height / 2.0f));
             if (velocity.y > 0) {
-                //position.y -= penetrationY;
+//                position.y -= penetrationY;
                 velocity.y = 0;
                 collidedTop = true;
             }
@@ -123,6 +124,7 @@ void Entity::CheckCollisionsY(Entity *objects, int objectCount,
             }
             else if (collidedBottom) {
                 enemy->isActive = false;
+                enemy->isSuccess = false;
             }
         }
     }
@@ -155,7 +157,7 @@ void Entity::CheckCollisionsX(Entity *objects, int objectCount,
         Entity* enemy = &enemies[i];
 
         if (CheckCollision(enemy)) {
-//
+            
 //            float ydist = fabs(position.x - enemy->position.x);
 //            float penetrationX = fabs(ydist - (width / 2.0f) - (enemy->width / 2.0f));
             if (velocity.x > 0) {

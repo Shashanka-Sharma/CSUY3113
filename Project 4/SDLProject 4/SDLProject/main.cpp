@@ -163,6 +163,8 @@ void Initialize() {
     state.player->speed = 2;
     state.player->jumpPower = 3.50f;
     state.player->textureID = characterTextureID;
+    state.player->height = 1.0f;
+    state.player->width = 1.0f;
     
     
     
@@ -209,6 +211,8 @@ void Initialize() {
     for (int i = 0; i < ENEMY_COUNT; i++) {
         state.enemies[i].textureID = enemyTextureID;
         state.enemies[i].entityType = ENEMY;
+        state.enemies[i].height = 1.0f;
+        state.enemies[i].width = 1.0f;
     }
     state.enemies[0].position = glm::vec3(3.55,-3.0,0);
     state.enemies[1].position = glm::vec3(2.55,0.65,0);
@@ -307,12 +311,25 @@ void Update() {
        deltaTime -= FIXED_TIMESTEP;
    }
    accumulator = deltaTime;
+    
+    int counter = 0;
+    for (int i = 0; i < ENEMY_COUNT; i++) {
+        if (state.enemies[i].isSuccess == false) {
+            counter += 1;
+        }
+    }
+    
+    if (counter == 3) {
+        state.player->isSuccess = true;
+    }
 }
 
 void Render() {
     glClear(GL_COLOR_BUFFER_BIT);
     
+    
     state.player->Render(&program);
+    
     for (int i = 0; i < ENEMY_COUNT ; i++) {
         state.enemies[i].Render(&program);
     }
@@ -320,6 +337,25 @@ void Render() {
     for (size_t i = 0; i < PLATFORM_COUNT; i++) {
         state.platforms[i].Render(&program);
     }
+    
+    int counter = 0;
+    for (int i = 0; i < ENEMY_COUNT; i++) {
+        if (state.enemies[i].isSuccess == false) {
+            counter += 1;
+            }
+    }
+    
+    if (counter == ENEMY_COUNT) {
+        state.player->isSuccess = true;
+    }
+    
+    if (state.player->isSuccess){
+                    DrawText(&program, state.fontTextureID, "YOU WIN!", 0.5f, -0.05f, glm::vec3(-1.5f,1.0f,0));
+        }
+        else if (state.player->isActive == false){
+                DrawText(&program, state.fontTextureID, "YOU LOSE!", 0.5f, -0.05f, glm::vec3(-1.5f,1.0f,0));
+            //}
+        }
     
     
     

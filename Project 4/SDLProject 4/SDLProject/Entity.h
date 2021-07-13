@@ -36,6 +36,7 @@ public:
     float height = 1;
     
     bool jump = false;
+    bool isSuccess = false;
     float jumpPower = 0;
     
     int *animRight = NULL;
