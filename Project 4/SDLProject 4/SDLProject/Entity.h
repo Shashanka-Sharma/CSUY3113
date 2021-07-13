@@ -36,7 +36,7 @@ public:
     float height = 1;
     
     bool jump = false;
-    bool isSuccess = false;
+    bool isSuccess;
     float jumpPower = 0;
     
     int *animRight = NULL;
@@ -50,6 +50,8 @@ public:
     float animTime = 0;
     int animCols = 0;
     int animRows = 0;
+    
+    int counter = 0;
     
     bool isActive = true;
     

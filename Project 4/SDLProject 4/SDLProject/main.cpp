@@ -37,11 +37,13 @@ glm::mat4 viewMatrix, projectionMatrix;
 float lastTicks = 0.0f;
 float accumulator = 0.0f;
 
+
 struct GameState {
     Entity* player;
     Entity* platforms;
     Entity* enemies;
     GLuint fontTextureID;
+    int counter = 0;
 };
 
 GameState state;
@@ -211,8 +213,8 @@ void Initialize() {
     for (int i = 0; i < ENEMY_COUNT; i++) {
         state.enemies[i].textureID = enemyTextureID;
         state.enemies[i].entityType = ENEMY;
-        state.enemies[i].height = 1.0f;
-        state.enemies[i].width = 1.0f;
+        state.enemies[i].height = 0.75f;
+        state.enemies[i].width = 0.75f;
     }
     state.enemies[0].position = glm::vec3(3.55,-3.0,0);
     state.enemies[1].position = glm::vec3(2.55,0.65,0);
@@ -312,16 +314,16 @@ void Update() {
    }
    accumulator = deltaTime;
     
-    int counter = 0;
-    for (int i = 0; i < ENEMY_COUNT; i++) {
-        if (state.enemies[i].isSuccess == false) {
-            counter += 1;
-        }
-    }
     
-    if (counter == 3) {
-        state.player->isSuccess = true;
-    }
+//    for (int i = 0; i < ENEMY_COUNT; i++) {
+//        if (state.enemies[i].isSuccess == false) {
+//            state.player->counter += 1;
+//        }
+//    }
+//
+//    if (state.player->counter == ENEMY_COUNT) {
+//        state.player->isSuccess = true;
+//    }
 }
 
 void Render() {
@@ -354,7 +356,7 @@ void Render() {
         }
         else if (state.player->isActive == false){
                 DrawText(&program, state.fontTextureID, "YOU LOSE!", 0.5f, -0.05f, glm::vec3(-1.5f,1.0f,0));
-            //}
+            
         }
     
     
