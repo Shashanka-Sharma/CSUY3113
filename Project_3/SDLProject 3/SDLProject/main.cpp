@@ -104,7 +104,7 @@ void DrawText(ShaderProgram *program, GLuint fontTextureID, std::string text,flo
         glDrawArrays(GL_TRIANGLES, 0, (int)(text.size() * 6));
         glDisableVertexAttribArray(program->positionAttribute);
         glDisableVertexAttribArray(program->texCoordAttribute);
-    }
+}
 
 void Initialize() {
     SDL_Init(SDL_INIT_VIDEO);
@@ -145,14 +145,8 @@ void Initialize() {
     state.player->acceleration = glm::vec3(0,-0.5f,0);
     state.player->speed = 1.5f;
     state.player->entityType = PLAYER;
-    // initialize launchpad entity
-//    state.launchPad = new Entity();
-//    state.launchPad->textureID = padTextureID;
-//    state.launchPad->position = glm::vec3(2.6f,-3.25f,0);
-//    state.launchPad->entityType = WINTILE;
-    //initialize obstacle entity
+
     state.obstacles = new Entity[OBSTACLE_COUNT];
-    //state.obstacles->entityType = DEADTILE;
     for (size_t i = 0; i < OBSTACLE_COUNT-1; i++) {
         state.obstacles[i].textureID = obstacleTextureID;
         state.obstacles[i].entityType = DEADTILE;
@@ -269,21 +263,6 @@ void Update() {
        deltaTime -= FIXED_TIMESTEP;
    }
    accumulator = deltaTime;
-//    state.launchPad->Update(FIXED_TIMESTEP, state.obstacles, OBSTACLE_COUNT);
-    
-//    if (state.player->isActive == false){
-//        if (state.player->isSuccess == false){
-//            state.gameStatus = LOSE;
-//        }
-        
-//        DrawText(&program, fontTextureID, "MISSION FAILED!", 0.5f, -0.05f, glm::vec3(-2.95f,1.25f,0));
-    //}
-//    else if (state.player->isActive == false){
-//        if (state.player->isSuccess == true){
-//            state.gameStatus = WIN;
-//        }
-//        DrawText(&program, fontTextureID, "MISSION SUCCESS!", 0.5f, -0.05f, glm::vec3(-2.95f,1.25f,0));
-//    }
 }
 
 void Render() {
@@ -306,11 +285,6 @@ void Render() {
             DrawText(&program, state.fontTextureID, "MISSION FAILED!", 0.5f, -0.05f, glm::vec3(-2.95f,1.25f,0));
         //}
     }
-//    if (state.gameStatus == WIN) {
-//        DrawText(&program, state.fontTextureID, "MISSION SUCCESS!", 0.5f, -0.05f, glm::vec3(-2.95f,1.25f,0));
-//    }
-//    else if (state.gameStatus == LOSE) {
-//        DrawText(&program, state.fontTextureID, "MISSION FAILED!", 0.5f, -0.05f, glm::vec3(-2.95f,1.25f,0));
     SDL_GL_SwapWindow(displayWindow);
 }
 

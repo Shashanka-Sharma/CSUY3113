@@ -8,6 +8,7 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_opengl.h>
+#include <SDL_mixer.h>
 #include "glm/mat4x4.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "ShaderProgram.h"
@@ -27,6 +28,9 @@ glm::mat4 viewMatrix, ballMatrix, projectionMatrix, platformAMatrix, platformBMa
 GLuint platformATextureID;
 GLuint platformBTextureID;
 GLuint ballTextureID;
+
+Mix_Music* music;
+Mix_Chunk* bounce;
 
 //sets the players positions and speed
 glm::vec3 playerA_position = glm::vec3(2.6,0,0); // 3.25 - ycoord
@@ -59,7 +63,7 @@ GLuint LoadTexture(const char* filePath) { // we do not have the filepath for th
     return textureID;
 }
 void Initialize() {
-    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
     displayWindow = SDL_CreateWindow("Pong Game!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 500, 480, SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(displayWindow);
     SDL_GL_MakeCurrent(displayWindow, context);
@@ -71,6 +75,14 @@ void Initialize() {
     glViewport(0, 0, 640, 480);
     
     program.Load("shaders/vertex_textured.glsl", "shaders/fragment_textured.glsl");
+    
+    // this is how you play music
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+    music = Mix_LoadMUS("dooblydoo.mp3");
+    Mix_PlayMusic(music, -1);
+    Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
+    
+    bounce = Mix_LoadWAV("bounce.wav");
     
     // standard matrices for display
     viewMatrix = glm::mat4(1.0f);
@@ -99,6 +111,9 @@ void Initialize() {
     platformBTextureID = LoadTexture("download.jpg");
     ballTextureID = LoadTexture("square-64.png");
     
+    
+    
+    
 }
 void collison() {
     float x_dist = fabs(playerA_position.x - ball_position.x) -
@@ -116,17 +131,21 @@ void collison() {
         // Player Collision
         if(ball_movement.x == 1.0f){
             ball_movement.x = -ball_movement.x;
+            Mix_PlayChannel(-1,bounce,0);
         }
         else {
             ball_movement.x = -ball_movement.x;
+            Mix_PlayChannel(-1,bounce,0);
         }
     }
     
     if (ball_position.y >= 3.5f) {
         ball_movement.y = -ball_movement.y;
+        Mix_PlayChannel(-1,bounce,0);
     }
     else if (ball_position.y <= -3.5f){
         ball_movement.y = -ball_movement.y;
+        Mix_PlayChannel(-1,bounce,0);
     }
     if (ball_position.x >= 2.6f) {
         ball_speed = 0.0f;
@@ -153,7 +172,7 @@ void ProcessInput() {
             case SDL_KEYDOWN:
                 switch(event.key.keysym.sym){
                     case SDLK_SPACE:
-                        ball_speed = 2.5f;
+                        ball_speed = 3.1f;
                         
                 }
         }

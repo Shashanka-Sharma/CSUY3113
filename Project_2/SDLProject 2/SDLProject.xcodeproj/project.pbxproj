@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF5DA51B26951E560021E19A /* bounce.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF5DA51926951DBA0021E19A /* bounce.wav */; };
+		CF5DA51D26951E5A0021E19A /* dooblydoo.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF5DA51A26951DC10021E19A /* dooblydoo.mp3 */; };
 		CF80790626780456004A6190 /* platformPack_tile031.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF80790426780369004A6190 /* platformPack_tile031.png */; };
 		CF80790826780459004A6190 /* platformPack_tile032.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF80790526780382004A6190 /* platformPack_tile032.png */; };
 		CF80790B26783434004A6190 /* platformPack_item001.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF80790A2678341B004A6190 /* platformPack_item001.png */; };
@@ -30,6 +32,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
+				CF5DA51D26951E5A0021E19A /* dooblydoo.mp3 in CopyFiles */,
+				CF5DA51B26951E560021E19A /* bounce.wav in CopyFiles */,
 				DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */,
 				CFF17552267C294D0063C67F /* download.jpg in CopyFiles */,
 				CF80790E26786EF1004A6190 /* PngItem_590567.png in CopyFiles */,
@@ -43,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF5DA51926951DBA0021E19A /* bounce.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bounce.wav; sourceTree = "<group>"; };
+		CF5DA51A26951DC10021E19A /* dooblydoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dooblydoo.mp3; sourceTree = "<group>"; };
 		CF80790426780369004A6190 /* platformPack_tile031.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformPack_tile031.png; sourceTree = "<group>"; };
 		CF80790526780382004A6190 /* platformPack_tile032.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformPack_tile032.png; sourceTree = "<group>"; };
 		CF80790A2678341B004A6190 /* platformPack_item001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformPack_item001.png; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 				CF80790A2678341B004A6190 /* platformPack_item001.png */,
 				CF80790426780369004A6190 /* platformPack_tile031.png */,
 				CF80790526780382004A6190 /* platformPack_tile032.png */,
+				CF5DA51926951DBA0021E19A /* bounce.wav */,
+				CF5DA51A26951DC10021E19A /* dooblydoo.mp3 */,
 				CFF17551267C292A0063C67F /* download.jpg */,
 				DBDF1B5B2323DE8D007CECB1 /* glm */,
 				DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */,
