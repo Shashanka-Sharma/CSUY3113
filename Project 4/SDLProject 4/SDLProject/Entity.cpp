@@ -120,11 +120,13 @@ void Entity::CheckCollisionsY(Entity *objects, int objectCount,
                 collidedBottom = true;
             }
             if (collidedTop) {
+                //enemy->isActive = false;
                 isActive = false;
+                
             }
             else if (collidedBottom) {
                 enemy->isActive = false;
-                enemy->isSuccess = false;
+                //isActive = false;
             }
         }
     }
@@ -254,12 +256,12 @@ void Entity::AIWalker(Entity* player) {
             }
             else {
                 if (position.x <= 1.25) {
-                    movement = glm::vec3(1,0,0);
-                    velocity = glm::vec3(1,-1,0);
+                    movement.x = 1;
+                    
                 }
                 else {
-                    velocity = glm::vec3(1,1,0);
-                    movement = glm::vec3(-1,0,0);
+                    //velocity = glm::vec3(1,1,0);
+                    movement.x = 0;
                 }
             }
             break;

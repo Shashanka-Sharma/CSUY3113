@@ -43,7 +43,6 @@ struct GameState {
     Entity* platforms;
     Entity* enemies;
     GLuint fontTextureID;
-    int counter = 0;
 };
 
 GameState state;
@@ -52,7 +51,7 @@ Mix_Music* music;
 
 
 
-GLuint LoadTexture(const char* filePath) { // we do not have the filepath for the image yet
+GLuint LoadTexture(const char* filePath) {
     int w, h, n;
     unsigned char* image = stbi_load(filePath, &w, &h, &n, STBI_rgb_alpha);
     if (image == NULL) {
@@ -165,8 +164,8 @@ void Initialize() {
     state.player->speed = 2;
     state.player->jumpPower = 3.50f;
     state.player->textureID = characterTextureID;
-    state.player->height = 1.0f;
-    state.player->width = 1.0f;
+    state.player->height = 1.05f;
+    state.player->width = 1.05f;
     
     
     
@@ -213,8 +212,8 @@ void Initialize() {
     for (int i = 0; i < ENEMY_COUNT; i++) {
         state.enemies[i].textureID = enemyTextureID;
         state.enemies[i].entityType = ENEMY;
-        state.enemies[i].height = 0.75f;
-        state.enemies[i].width = 0.75f;
+        state.enemies[i].height = 1.05f;
+        state.enemies[i].width = 1.05f;
     }
     state.enemies[0].position = glm::vec3(3.55,-3.0,0);
     state.enemies[1].position = glm::vec3(2.55,0.65,0);
@@ -237,11 +236,7 @@ void Initialize() {
     state.enemies[2].acceleration = glm::vec3(0,-3.0,0);
     state.enemies[2].speed = 1.0f;
     state.enemies[2].jumpPower = 3.0f;
-    
-    
-    
-    
-    
+
     for (size_t i = 0; i < PLATFORM_COUNT; i++) {
         state.platforms[i].Update(0, NULL,NULL, 0, NULL, NULL);
     }
@@ -313,17 +308,6 @@ void Update() {
        deltaTime -= FIXED_TIMESTEP;
    }
    accumulator = deltaTime;
-    
-    
-//    for (int i = 0; i < ENEMY_COUNT; i++) {
-//        if (state.enemies[i].isSuccess == false) {
-//            state.player->counter += 1;
-//        }
-//    }
-//
-//    if (state.player->counter == ENEMY_COUNT) {
-//        state.player->isSuccess = true;
-//    }
 }
 
 void Render() {
@@ -341,17 +325,17 @@ void Render() {
     }
     
     int counter = 0;
+    int enemy = 3;
     for (int i = 0; i < ENEMY_COUNT; i++) {
-        if (state.enemies[i].isSuccess == false) {
+        if (state.enemies[i].isActive == false) {
             counter += 1;
+            enemy -= 1;
             }
     }
     
-    if (counter == ENEMY_COUNT) {
-        state.player->isSuccess = true;
-    }
+    DrawText(&program, state.fontTextureID, "Enemies: " + std::to_string(enemy), 0.4f, 0.0f, glm::vec3(-4.45f,2.0f,0));
     
-    if (state.player->isSuccess){
+    if (counter == ENEMY_COUNT){
                     DrawText(&program, state.fontTextureID, "YOU WIN!", 0.5f, -0.05f, glm::vec3(-1.5f,1.0f,0));
         }
         else if (state.player->isActive == false){
