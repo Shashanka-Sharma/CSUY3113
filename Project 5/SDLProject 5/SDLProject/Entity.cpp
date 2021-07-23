@@ -132,6 +132,8 @@ void Entity::CheckCollisionsX(Entity *objects, int objectCount)
 
 void Entity::CheckCollisionsY(Map *map)
 {
+    if (map == NULL) return;
+    
    // Probes for tiles
    glm::vec3 top = glm::vec3(position.x, position.y + (height / 2), position.z);
    glm::vec3 top_left = glm::vec3(position.x - (width / 2), position.y + (height / 2), position.z);

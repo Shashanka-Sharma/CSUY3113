@@ -98,7 +98,7 @@ void ProcessInput() {
                 switch (event.key.keysym.sym) {
                     case SDLK_RETURN:
                         if (currentScene == sceneList[0]) {
-                            currentScene = sceneList[1];
+                            SwitchToScene(sceneList[1]);
                         }
                         
                     case SDLK_SPACE:
