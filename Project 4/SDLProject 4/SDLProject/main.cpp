@@ -270,7 +270,7 @@ void ProcessInput() {
     
     const Uint8 *keys = SDL_GetKeyboardState(NULL);
 
-    if (keys[SDL_SCANCODE_LEFT]) {
+    if (keys[SDL_SCANCODE_LEFT]) { 
         state.player->movement.x = -1.0f;
         state.player->animIndices = state.player->animLeft;
     }

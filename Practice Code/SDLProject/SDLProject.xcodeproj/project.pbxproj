@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF7A71D026A749E6000903FA /* tileset.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A71CE26A749D5000903FA /* tileset.png */; };
+		CF7A71D426A74A8B000903FA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71D226A74A8B000903FA /* Map.cpp */; };
+		CF7A71D926A88D7C000903FA /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71D726A88D7C000903FA /* Util.cpp */; };
+		CF7A71DE26A897EE000903FA /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71DC26A897EE000903FA /* Scene.cpp */; };
+		CF7A71E326A8A1BD000903FA /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71E126A8A1BD000903FA /* Level1.cpp */; };
+		CF7A71E826A8A6E2000903FA /* Level2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71E626A8A6E2000903FA /* Level2.cpp */; };
 		CFF17557267F9A200063C67F /* george_0.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFF17556267F9A130063C67F /* george_0.png */; };
 		CFF1755B268108470063C67F /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CFF17559268108470063C67F /* Entity.cpp */; };
 		CFF1755F26811FF40063C67F /* ctg.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFF1755E26811FC60063C67F /* ctg.png */; };
@@ -32,6 +38,7 @@
 				DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */,
 				CFF17557267F9A200063C67F /* george_0.png in CopyFiles */,
 				CFF17573268A59CD0063C67F /* platformPack_tile001.png in CopyFiles */,
+				CF7A71D026A749E6000903FA /* tileset.png in CopyFiles */,
 				CFF17576268E79F50063C67F /* font2.png in CopyFiles */,
 				CFF1755F26811FF40063C67F /* ctg.png in CopyFiles */,
 			);
@@ -40,6 +47,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF7A71CE26A749D5000903FA /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
+		CF7A71D226A74A8B000903FA /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		CF7A71D326A74A8B000903FA /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		CF7A71D726A88D7C000903FA /* Util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		CF7A71D826A88D7C000903FA /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		CF7A71DC26A897EE000903FA /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		CF7A71DD26A897EE000903FA /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		CF7A71E126A8A1BD000903FA /* Level1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
+		CF7A71E226A8A1BD000903FA /* Level1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
+		CF7A71E626A8A6E2000903FA /* Level2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level2.cpp; sourceTree = "<group>"; };
+		CF7A71E726A8A6E2000903FA /* Level2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
 		CFF17556267F9A130063C67F /* george_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = george_0.png; sourceTree = "<group>"; };
 		CFF17559268108470063C67F /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		CFF1755A268108470063C67F /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
@@ -106,8 +124,19 @@
 				DBDF1B522323DE3F007CECB1 /* main.cpp */,
 				CFF17575268E79E80063C67F /* font2.png */,
 				CFF17556267F9A130063C67F /* george_0.png */,
+				CF7A71CE26A749D5000903FA /* tileset.png */,
 				CFF17559268108470063C67F /* Entity.cpp */,
 				CFF1755A268108470063C67F /* Entity.h */,
+				CF7A71D226A74A8B000903FA /* Map.cpp */,
+				CF7A71D326A74A8B000903FA /* Map.h */,
+				CF7A71D726A88D7C000903FA /* Util.cpp */,
+				CF7A71D826A88D7C000903FA /* Util.h */,
+				CF7A71DC26A897EE000903FA /* Scene.cpp */,
+				CF7A71DD26A897EE000903FA /* Scene.h */,
+				CF7A71E126A8A1BD000903FA /* Level1.cpp */,
+				CF7A71E226A8A1BD000903FA /* Level1.h */,
+				CF7A71E626A8A6E2000903FA /* Level2.cpp */,
+				CF7A71E726A8A6E2000903FA /* Level2.h */,
 			);
 			path = SDLProject;
 			sourceTree = "<group>";
@@ -180,9 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7A71DE26A897EE000903FA /* Scene.cpp in Sources */,
 				DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */,
 				CFF1755B268108470063C67F /* Entity.cpp in Sources */,
+				CF7A71D426A74A8B000903FA /* Map.cpp in Sources */,
 				DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */,
+				CF7A71E826A8A6E2000903FA /* Level2.cpp in Sources */,
+				CF7A71D926A88D7C000903FA /* Util.cpp in Sources */,
+				CF7A71E326A8A1BD000903FA /* Level1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

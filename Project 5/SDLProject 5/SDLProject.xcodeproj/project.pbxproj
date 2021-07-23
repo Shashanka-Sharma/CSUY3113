@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF7A71F226A92392000903FA /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71F026A92392000903FA /* Entity.cpp */; };
+		CF7A71F626A923A5000903FA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71F426A923A4000903FA /* Map.cpp */; };
+		CF7A71FA26A923B0000903FA /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71F826A923B0000903FA /* Util.cpp */; };
+		CF7A71FE26A923C5000903FA /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71FC26A923C5000903FA /* Scene.cpp */; };
+		CF7A720226A923D0000903FA /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A720026A923D0000903FA /* Level1.cpp */; };
+		CF7A720626A923DA000903FA /* Level2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A720426A923DA000903FA /* Level2.cpp */; };
+		CF7A720A26A923E6000903FA /* Level3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A720826A923E6000903FA /* Level3.cpp */; };
+		CF7A720E26A92750000903FA /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A720C26A92750000903FA /* Menu.cpp */; };
+		CF7A721826A93C39000903FA /* font2.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A721326A9374E000903FA /* font2.png */; };
+		CF7A721A26A93C3B000903FA /* tiles.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A721226A9373B000903FA /* tiles.png */; };
+		CF7A721C26A93C3D000903FA /* playerSpriteSheet.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A721626A93BE3000903FA /* playerSpriteSheet.png */; };
+		CF7A721E26A93C40000903FA /* enemySpriteSheet.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A721726A93C1C000903FA /* enemySpriteSheet.png */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -25,12 +37,36 @@
 			dstSubfolderSpec = 6;
 			files = (
 				DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */,
+				CF7A721826A93C39000903FA /* font2.png in CopyFiles */,
+				CF7A721C26A93C3D000903FA /* playerSpriteSheet.png in CopyFiles */,
+				CF7A721E26A93C40000903FA /* enemySpriteSheet.png in CopyFiles */,
+				CF7A721A26A93C3B000903FA /* tiles.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF7A71F026A92392000903FA /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		CF7A71F126A92392000903FA /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		CF7A71F426A923A4000903FA /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
+		CF7A71F526A923A4000903FA /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		CF7A71F826A923B0000903FA /* Util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		CF7A71F926A923B0000903FA /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		CF7A71FC26A923C5000903FA /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		CF7A71FD26A923C5000903FA /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		CF7A720026A923D0000903FA /* Level1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
+		CF7A720126A923D0000903FA /* Level1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
+		CF7A720426A923DA000903FA /* Level2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level2.cpp; sourceTree = "<group>"; };
+		CF7A720526A923DA000903FA /* Level2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
+		CF7A720826A923E6000903FA /* Level3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level3.cpp; sourceTree = "<group>"; };
+		CF7A720926A923E6000903FA /* Level3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level3.h; sourceTree = "<group>"; };
+		CF7A720C26A92750000903FA /* Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
+		CF7A720D26A92750000903FA /* Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		CF7A721226A9373B000903FA /* tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tiles.png; path = ../../../kenney_pixelplatformer/Tilemap/tiles.png; sourceTree = "<group>"; };
+		CF7A721326A9374E000903FA /* font2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font2.png; sourceTree = "<group>"; };
+		CF7A721626A93BE3000903FA /* playerSpriteSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playerSpriteSheet.png; path = "../../../Pixel Adventure 2/Enemies/Mushroom/playerSpriteSheet.png"; sourceTree = "<group>"; };
+		CF7A721726A93C1C000903FA /* enemySpriteSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemySpriteSheet.png; path = "../../../Pixel Adventure 2/Enemies/Radish/enemySpriteSheet.png"; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* SDLProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDLProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -87,6 +123,26 @@
 				DBDF1B5C2323DE8D007CECB1 /* shaders */,
 				DBDF1B5A2323DE8D007CECB1 /* stb_image.h */,
 				DBDF1B522323DE3F007CECB1 /* main.cpp */,
+				CF7A71F026A92392000903FA /* Entity.cpp */,
+				CF7A71F126A92392000903FA /* Entity.h */,
+				CF7A71F426A923A4000903FA /* Map.cpp */,
+				CF7A71F526A923A4000903FA /* Map.h */,
+				CF7A71F826A923B0000903FA /* Util.cpp */,
+				CF7A71F926A923B0000903FA /* Util.h */,
+				CF7A71FC26A923C5000903FA /* Scene.cpp */,
+				CF7A71FD26A923C5000903FA /* Scene.h */,
+				CF7A720026A923D0000903FA /* Level1.cpp */,
+				CF7A720126A923D0000903FA /* Level1.h */,
+				CF7A720426A923DA000903FA /* Level2.cpp */,
+				CF7A720526A923DA000903FA /* Level2.h */,
+				CF7A720826A923E6000903FA /* Level3.cpp */,
+				CF7A720926A923E6000903FA /* Level3.h */,
+				CF7A720C26A92750000903FA /* Menu.cpp */,
+				CF7A720D26A92750000903FA /* Menu.h */,
+				CF7A721326A9374E000903FA /* font2.png */,
+				CF7A721226A9373B000903FA /* tiles.png */,
+				CF7A721626A93BE3000903FA /* playerSpriteSheet.png */,
+				CF7A721726A93C1C000903FA /* enemySpriteSheet.png */,
 			);
 			path = SDLProject;
 			sourceTree = "<group>";
@@ -159,8 +215,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7A71FE26A923C5000903FA /* Scene.cpp in Sources */,
 				DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */,
+				CF7A71F226A92392000903FA /* Entity.cpp in Sources */,
+				CF7A720A26A923E6000903FA /* Level3.cpp in Sources */,
+				CF7A720E26A92750000903FA /* Menu.cpp in Sources */,
+				CF7A71F626A923A5000903FA /* Map.cpp in Sources */,
 				DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */,
+				CF7A720626A923DA000903FA /* Level2.cpp in Sources */,
+				CF7A71FA26A923B0000903FA /* Util.cpp in Sources */,
+				CF7A720226A923D0000903FA /* Level1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
