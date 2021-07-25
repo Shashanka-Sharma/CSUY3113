@@ -25,6 +25,7 @@ public:
     glm::vec3 acceleration;
     glm::vec3 velocity;
     float speed;
+    int lives;
     
     EntityType entityType;
     AIType aiType;

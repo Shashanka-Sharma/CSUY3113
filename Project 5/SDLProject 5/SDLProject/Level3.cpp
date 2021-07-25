@@ -3,7 +3,7 @@
 #define LEVEL3_WIDTH 14
 #define LEVEL3_HEIGHT 8
 #define LEVEL3_ENEMY_COUNT 1
-unsigned int level3_data[] =
+float level3_data[] =
 {
     3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,

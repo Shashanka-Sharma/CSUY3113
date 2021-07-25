@@ -33,6 +33,9 @@ bool gameIsRunning = true;
 ShaderProgram program;
 glm::mat4 viewMatrix, modelMatrix, projectionMatrix;
 
+Mix_Music* music;
+Mix_Chunk* bounce;
+
 Scene *currentScene;
 Scene *sceneList[4];
 
@@ -54,6 +57,11 @@ void Initialize() {
     glViewport(0, 0, 640, 480);
     
     program.Load("shaders/vertex_textured.glsl", "shaders/fragment_textured.glsl");
+    
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+    music = Mix_LoadMUS("The Entertainer.mp3");
+    Mix_PlayMusic(music, -1);
+    Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
     
     viewMatrix = glm::mat4(1.0f);
     modelMatrix = glm::mat4(1.0f);
@@ -100,6 +108,7 @@ void ProcessInput() {
                         if (currentScene == sceneList[0]) {
                             SwitchToScene(sceneList[1]);
                         }
+                        break;
                         
                     case SDLK_SPACE:
                         if (currentScene->state.player->collidedBottom) {

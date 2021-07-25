@@ -3,7 +3,7 @@
 #define MENU_WIDTH 14
 #define MENU_HEIGHT 8
 #define MENU_ENEMY_COUNT 0
-unsigned int menu_data[] =
+float menu_data[] =
 {
     3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3,
     3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3,

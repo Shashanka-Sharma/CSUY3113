@@ -15,7 +15,7 @@
 class Map {
    int width;
    int height;
-   unsigned int *levelData;
+   float *levelData;
     
    GLuint textureID;
    float tile_size;
@@ -28,7 +28,7 @@ class Map {
    float left_bound, right_bound, top_bound, bottom_bound;
     
 public:
-   Map(int width, int height, unsigned int *levelData, GLuint textureID, float tile_size, int
+   Map(int width, int height, float *levelData, GLuint textureID, float tile_size, int
        tile_count_x, int tile_count_y);
    void Build();
    void Render(ShaderProgram *program);

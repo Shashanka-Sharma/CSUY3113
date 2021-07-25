@@ -3,7 +3,7 @@
 #define LEVEL2_WIDTH 14
 #define LEVEL2_HEIGHT 8
 #define LEVEL2_ENEMY_COUNT 1
-unsigned int level2_data[] =
+float level2_data[] =
 {
     3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
