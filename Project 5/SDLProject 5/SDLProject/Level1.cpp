@@ -9,7 +9,7 @@ float level1_data[] =
     49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,
     49, 49, 49, 49, 49, 49, 49, 49, 49, 0, 0, 49, 0, 0, 0, 0, 0, 0, 0,0,
     49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 49, 49, 0, 0, 0, 0, 0, 0, 0,0,
-    49, 0, 0, 0, 0, 0, 0, 0, 49, 49,49,49, 49, 0, 0, 0, 0, 0, 0,0,
+    49, 0, 0, 0, 0, 0, 0, 0, 0, 49,49,49, 49, 0, 0, 0, 0, 0, 0,0,
     49, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 49, 49, 49, 49, 49, 0, 0, 0,0,
     49, 0, 0, 0, 0, 2, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,88,
     2, 2, 2, 2, 2, 4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
@@ -58,25 +58,28 @@ void Level1::Initialize() {
     state.enemies[0].position = glm::vec3(3.4,-1.0, 0);
 
     state.enemies[0].entityType = ENEMY;
-    //state.enemies[0].aiType = WAITANDGO;
+    state.enemies[0].aiType = WAITANDGO;
     state.enemies[0].aiState = IDLE;
     state.enemies[0].speed = 1.0f;
+    state.enemies[0].acceleration = glm::vec3(0,-3,0);
     
     state.enemies[1].textureID = enemyTextureID;
     state.enemies[1].position = glm::vec3(11,-6.0, 0);
 
     state.enemies[1].entityType = ENEMY;
-    //state.enemies[1].aiType = WALKER;
+    //state.enemies[1].aiType = WAITANDGO;
     state.enemies[1].aiState = IDLE;
     state.enemies[1].speed = 1.0f;
+    state.enemies[1].acceleration = glm::vec3(0,-3,0);
     
     state.enemies[2].textureID = enemyTextureID;
-    state.enemies[2].position = glm::vec3(11,-1.0, 0);
+    state.enemies[2].position = glm::vec3(17.5f,-1.0, 0);
 
     state.enemies[2].entityType = ENEMY;
-    //state.enemies[1].aiType = WALKER;
+    //state.enemies[2].aiType = WALKER;
     state.enemies[2].aiState = IDLE;
     state.enemies[2].speed = 1.0f;
+    state.enemies[2].acceleration = glm::vec3(0,-3,0);
     
     
    
@@ -98,6 +101,11 @@ void Level1::Render(ShaderProgram *program) {
         state.enemies[i].Render(program);
     }
     
+    
     Util::DrawText(program, state.fontTextureID, "Lives: " + std::to_string(state.player->lives), 0.5f, -0.25f, glm::vec3 (1.0f,-1.0f,0));
+    
+    if (state.player->lives == 0) {
+        Util::DrawText(program, state.fontTextureID, "You Lose!", 0.5f, -0.25f, glm::vec3(0,0,0));
+    }
     
 }

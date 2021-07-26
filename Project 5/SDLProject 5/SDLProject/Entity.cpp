@@ -70,6 +70,7 @@ void Entity::Update(float deltaTime, Entity* player,Entity* objects, int objectC
 
 bool Entity::CheckCollision(Entity *other) {
     
+    if (other == this) return false;
     if (isActive == false || other->isActive == false) return false;
     
     float xdist = fabs(position.x - other->position.x) -
@@ -279,13 +280,18 @@ void Entity::AI(Entity* player) {
 }
 
 void Entity::AIWalker() {
-    movement = glm::vec3(-1,0,0);
+    if (position.x > -5.0f) {
+    movement = glm::vec3(1,0,0);
+    }
+    else {
+        movement = glm::vec3(-1,0,0);
+    }
 }
 
 void Entity::AIWaitAndGo(Entity* player) {
     switch (aiState) {
         case IDLE:
-            if (glm::distance(position, player->position) < 3.0f) {
+            if (glm::distance(position, player->position) < 4.0f) {
                 aiState = WALKING;
             }
             break;
