@@ -21,6 +21,7 @@
 		CF7A721E26A93C40000903FA /* enemySpriteSheet.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A721726A93C1C000903FA /* enemySpriteSheet.png */; };
 		CF7A722126ABD436000903FA /* The Entertainer.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A722026ABD42C000903FA /* The Entertainer.mp3 */; };
 		CF7A722426ABD5D6000903FA /* death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A722326ABD5D0000903FA /* death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3 */; };
+		CF7A722726AE7519000903FA /* character_0021.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A722626AE7510000903FA /* character_0021.png */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -43,6 +44,7 @@
 				CF7A721C26A93C3D000903FA /* playerSpriteSheet.png in CopyFiles */,
 				CF7A721E26A93C40000903FA /* enemySpriteSheet.png in CopyFiles */,
 				CF7A722126ABD436000903FA /* The Entertainer.mp3 in CopyFiles */,
+				CF7A722726AE7519000903FA /* character_0021.png in CopyFiles */,
 				CF7A722426ABD5D6000903FA /* death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3 in CopyFiles */,
 				CF7A721A26A93C3B000903FA /* tiles.png in CopyFiles */,
 			);
@@ -73,6 +75,7 @@
 		CF7A721726A93C1C000903FA /* enemySpriteSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemySpriteSheet.png; path = "../../../Pixel Adventure 2/Enemies/Radish/enemySpriteSheet.png"; sourceTree = "<group>"; };
 		CF7A722026ABD42C000903FA /* The Entertainer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Entertainer.mp3"; sourceTree = "<group>"; };
 		CF7A722326ABD5D0000903FA /* death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3"; sourceTree = "<group>"; };
+		CF7A722626AE7510000903FA /* character_0021.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = character_0021.png; path = ../../../kenney_pixelplatformer/Characters/character_0021.png; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* SDLProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDLProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -150,6 +153,7 @@
 				CF7A721626A93BE3000903FA /* playerSpriteSheet.png */,
 				CF7A722026ABD42C000903FA /* The Entertainer.mp3 */,
 				CF7A722326ABD5D0000903FA /* death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3 */,
+				CF7A722626AE7510000903FA /* character_0021.png */,
 				CF7A721726A93C1C000903FA /* enemySpriteSheet.png */,
 			);
 			path = SDLProject;

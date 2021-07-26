@@ -107,26 +107,20 @@ void Entity::CheckCollisionsY(Entity *objects, int objectCount,
 
         if (CheckCollision(enemy)) {
 
-//            float ydist = fabs(position.y - enemy->position.y);
-//            float penetrationY = fabs(ydist - (height / 2.0f) - (enemy->height / 2.0f));
             if (velocity.y > 0) {
-//                position.y -= penetrationY;
                 velocity.y = 0;
                 collidedTop = true;
             }
             else if (velocity.y < 0) {
-                //position.y += penetrationY;
                 velocity.y = 0;
                 collidedBottom = true;
             }
             if (collidedTop) {
-                //enemy->isActive = false;
                 isActive = false;
                 
             }
             else if (collidedBottom) {
                 enemy->isActive = false;
-                //isActive = false;
             }
         }
     }

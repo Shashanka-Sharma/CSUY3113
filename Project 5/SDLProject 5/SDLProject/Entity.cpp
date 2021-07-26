@@ -102,6 +102,16 @@ void Entity::CheckCollisionsY(Entity *objects, int objectCount)
                velocity.y = 0;
                collidedBottom = true;
            }
+           if (collidedTop) {
+               lives-= 1;
+               if (lives == 0) {
+                   isActive = false;
+               }
+               
+           }
+           else if (collidedBottom) {
+               object->isActive = false;
+           }
        }
    }
 }
@@ -124,6 +134,12 @@ void Entity::CheckCollisionsX(Entity *objects, int objectCount)
                position.x += penetrationX;
                velocity.x = 0;
                collidedLeft = true;
+           }
+           if (collidedRight || collidedLeft) {
+               lives-= 1;
+               if (lives == 0) {
+                   isActive = false;
+               }
            }
        }
    }
