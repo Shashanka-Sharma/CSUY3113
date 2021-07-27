@@ -22,6 +22,7 @@
 #include "Level2.h"
 #include "Level3.h"
 #include "Menu.h"
+#include "Finale.h"
 
 #define FIXED_TIMESTEP 0.0166666f
 float lastTicks = 0;
@@ -37,7 +38,7 @@ Mix_Music* music;
 Mix_Chunk* bounce;
 
 Scene *currentScene;
-Scene *sceneList[4];
+Scene *sceneList[5];
 
 void SwitchToScene(Scene *scene) {
     currentScene = scene;
@@ -81,13 +82,12 @@ void Initialize() {
     sceneList[1] = new Level1();
     sceneList[2] = new Level2();
     sceneList[3] = new Level3();
+    sceneList[4] = new Finale();
     
-    SwitchToScene(sceneList[0]);
+    SwitchToScene(sceneList[4]);
     
-    if (currentScene == sceneList[0]) {
-        program.SetColor(0.5f, 0.5f, 0.5f, 0.5f);
-    }
- 
+    GLuint fontTextureID = Util::LoadTexture("font2.png");
+    currentScene->state.fontTextureID = fontTextureID;
 }
 
 void ProcessInput() {
@@ -173,6 +173,12 @@ void Render() {
     program.SetViewMatrix(viewMatrix);
     
     currentScene->Render(&program);
+    if (currentScene->state.player->isActive == false) {
+            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 0.5f, -0.25f, glm::vec3(10, -2.0,0));
+    }
+    if (currentScene != sceneList[0] && currentScene != sceneList[4] ) {
+        Util::DrawText(&program, currentScene->state.fontTextureID, "Lives: " + std::to_string(currentScene->state.player->lives), 0.5f, -0.25f, glm::vec3 (1.0f,-1.0f,0));
+    }
     
     SDL_GL_SwapWindow(displayWindow);
 }

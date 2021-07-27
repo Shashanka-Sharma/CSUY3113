@@ -21,7 +21,6 @@ void Level1::Initialize() {
     state.nextScene = -1;
     
     GLuint fontTextureID = Util::LoadTexture("font2.png");
-    
     state.fontTextureID = fontTextureID;
     
     GLuint mapTextureID = Util::LoadTexture("tiles.png");
@@ -91,21 +90,15 @@ void Level1::Update(float deltaTime) {
         state.enemies[i].Update(deltaTime, state.player, state.enemies, LEVEL1_ENEMY_COUNT, state.map);
     }
     if (state.player->position.x >= 20) {
-        state.nextScene = 1;
+        state.nextScene = 2;
     }
 }
 void Level1::Render(ShaderProgram *program) {
     state.map->Render(program);
     state.player->Render(program);
+    
     for (size_t i = 0; i < LEVEL1_ENEMY_COUNT; i++) {
         state.enemies[i].Render(program);
-    }
-    
-    
-    Util::DrawText(program, state.fontTextureID, "Lives: " + std::to_string(state.player->lives), 0.5f, -0.25f, glm::vec3 (1.0f,-1.0f,0));
-    
-    if (state.player->lives == 0) {
-        Util::DrawText(program, state.fontTextureID, "You Lose!", 0.5f, -0.25f, glm::vec3(0,0,0));
     }
     
 }
