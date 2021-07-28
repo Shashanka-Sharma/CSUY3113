@@ -21,6 +21,7 @@ struct GameState {
     Entity *enemies;
     int nextScene;
     GLuint fontTextureID;
+    int lives;
 };
 
 class Scene {
