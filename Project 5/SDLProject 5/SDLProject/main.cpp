@@ -98,11 +98,17 @@ void Initialize() {
     sceneList[3] = new Level3();
     sceneList[4] = new Finale();
     
+    sceneList[1]->state.lives = 3;
+    sceneList[2]->state.lives = sceneList[1]->state.player->lives;
+    sceneList[3]->state.lives = sceneList[2]->state.player->lives;
     SwitchToScene(sceneList[0]);
     
+//    sceneList[2]->state.lives = sceneList[1]->state.player->lives;
+//    sceneList[3]->state.lives = sceneList[2]->state.player->lives;
+//    
     GLuint fontTextureID = Util::LoadTexture("font2.png");
     currentScene->state.fontTextureID = fontTextureID;
-    currentScene->state.lives = 3;
+    
     
     if (currentScene == sceneList[4]) {
         Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);

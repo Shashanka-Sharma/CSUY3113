@@ -33,7 +33,7 @@ void Level2::Initialize() {
     state.player->acceleration = glm::vec3(0,-3.0f,0);
     state.player->speed = 2.0f;
     state.player->textureID = Util::LoadTexture("playerSpriteSheet.png");
-    state.player->lives = 3;
+    state.player->lives = state.lives;
     
     state.player->animRight = new int[7] {0,1,2,3,4,5,6};
     state.player->animLeft = new int[7] {8,9,10,11,12,13,14};
