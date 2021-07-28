@@ -12,7 +12,7 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "ShaderProgram.h"
 #include <vector>
-#include <string>
+
 
 #include "Util.h"
 #include "Entity.h"
@@ -37,7 +37,6 @@ glm::mat4 uiViewMatrix, uiProjectionMatrix;
 GLuint fontTextureID;
 
 Mix_Music* music;
-Mix_Chunk* bounce;
 
 Scene *currentScene;
 Scene *sceneList[5];
@@ -62,18 +61,11 @@ void Initialize() {
     glViewport(0, 0, 640, 480);
     
     program.Load("shaders/vertex_textured.glsl", "shaders/fragment_textured.glsl");
-    
+
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
     music = Mix_LoadMUS("The Entertainer.mp3");
     Mix_PlayMusic(music, -1);
     Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
-    
-//    if (currentScene == sceneList[4]) {
-//        Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
-//        music = Mix_LoadMUS("death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3");
-//        Mix_PlayMusic(music, -1);
-//        Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
-//    }
     
     uiViewMatrix = glm::mat4(1.0f);
     uiProjectionMatrix = glm::ortho(-5.0f, 5.0f, -3.75f, 3.75f, -1.0f, 1.0f);
@@ -97,25 +89,18 @@ void Initialize() {
     sceneList[2] = new Level2();
     sceneList[3] = new Level3();
     sceneList[4] = new Finale();
-    
-    sceneList[1]->state.lives = 3;
-    sceneList[2]->state.lives = sceneList[1]->state.player->lives;
-    sceneList[3]->state.lives = sceneList[2]->state.player->lives;
+
+//    if (currentScene == sceneList[4]) {
+//        Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+//        music = Mix_LoadMUS("death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3");
+//        Mix_PlayMusic(music, -1);
+//        Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
+//    }
     SwitchToScene(sceneList[0]);
+
     
-//    sceneList[2]->state.lives = sceneList[1]->state.player->lives;
-//    sceneList[3]->state.lives = sceneList[2]->state.player->lives;
-//    
     GLuint fontTextureID = Util::LoadTexture("font2.png");
     currentScene->state.fontTextureID = fontTextureID;
-    
-    
-    if (currentScene == sceneList[4]) {
-        Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
-        music = Mix_LoadMUS("death-and-axes-by-kevin-macleod-from-filmmusic-io.mp3");
-        Mix_PlayMusic(music, -1);
-        Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
-    }
 }
 
 void ProcessInput() {
@@ -184,6 +169,18 @@ void Update() {
    }
    accumulator = deltaTime;
     
+    if (currentScene->state.player->lifeLoss) {
+        lives -=1;
+        currentScene->state.player->lifeLoss = false;
+        if (lives <= 0) {
+            currentScene->state.player->isActive = false;
+        }
+        else {
+            currentScene->state.player->position =
+            currentScene->state.player->positionReset;
+        }
+    }
+    
     viewMatrix = glm::mat4(1.0f);
     if (currentScene->state.player->position.x > 5) {
         viewMatrix = glm::translate(viewMatrix,
@@ -208,13 +205,14 @@ void Render() {
     if (currentScene->state.player->isActive == false) {
             Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 0.5f, -0.25f, glm::vec3(-1, 2,0));
     }
-    if (currentScene != sceneList[0] && currentScene != sceneList[4] ) {
-        Util::DrawText(&program, currentScene->state.fontTextureID, "Lives: " + std::to_string(currentScene->state.lives), 0.5f, -0.25f, glm::vec3 (-4.5f,3.0f,0));
+    
+    if (currentScene != sceneList[0] && currentScene != sceneList[4] )
+    {
+        Util::DrawText(&program, currentScene->state.fontTextureID, "Lives: " + std::to_string(lives), 0.5f, -0.25f, glm::vec3 (-4.5f,3.0f,0));
     }
     
     SDL_GL_SwapWindow(displayWindow);
 }
-
 
 void Shutdown() {
     SDL_Quit();

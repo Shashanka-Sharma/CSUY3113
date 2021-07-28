@@ -21,11 +21,11 @@ enum AIState {IDLE, WALKING, ATTACKING};
 class Entity {
 public:
     glm::vec3 position;
+    glm::vec3 positionReset;
     glm::vec3 movement;
     glm::vec3 acceleration;
     glm::vec3 velocity;
     float speed;
-    int lives;
     
     EntityType entityType;
     AIType aiType;
@@ -39,6 +39,7 @@ public:
     float height = 1;
     
     bool jump = false;
+    bool lifeLoss = false;
     float jumpPower = 0;
     
     int *animRight = NULL;

@@ -28,13 +28,12 @@ void Level1::Initialize() {
     
     state.player = new Entity();
     state.player->position = glm::vec3(1,-6.0f,0);
+    state.player->positionReset = glm::vec3(1,-6.0f,0);
     state.player->entityType = PLAYER;
     state.player->movement = glm::vec3(0);
     state.player->acceleration = glm::vec3(0,-3.0f,0);
     state.player->speed = 2.0f;
     state.player->textureID = Util::LoadTexture("playerSpriteSheet.png");
-    
-    state.player->lives = state.lives;
     
     state.player->animRight = new int[7] {0,1,2,3,4,5,6};
     state.player->animLeft = new int[7] {8,9,10,11,12,13,14};
@@ -101,5 +100,4 @@ void Level1::Render(ShaderProgram *program) {
     for (size_t i = 0; i < LEVEL1_ENEMY_COUNT; i++) {
         state.enemies[i].Render(program);
     }
-    
 }

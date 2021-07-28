@@ -10,6 +10,7 @@
 #include "glm/mat4x4.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "ShaderProgram.h"
+#include <SDL_mixer.h>
 
 #include "Util.h"
 #include "Entity.h"
@@ -21,12 +22,11 @@ struct GameState {
     Entity *enemies;
     int nextScene;
     GLuint fontTextureID;
-    int lives;
 };
 
 class Scene {
 public:
-
+    int lives;
     GameState state;
     virtual void Initialize() = 0;
     virtual void Update(float deltaTime) = 0;

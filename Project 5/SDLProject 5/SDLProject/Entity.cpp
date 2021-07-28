@@ -4,6 +4,7 @@
 Entity::Entity()
 {
     position = glm::vec3(0);
+    positionReset = position;
     movement = glm::vec3(0);
     acceleration = glm::vec3(0);
     velocity = glm::vec3(0);
@@ -105,11 +106,7 @@ void Entity::CheckCollisionsY(Entity *objects, int objectCount)
                collidedBottom = true;
            }
            if (collidedTop) {
-               lives-= 1;
-               if (lives == 0) {
-                   isActive = false;
-               }
-               
+               lifeLoss = true;
            }
            else if (collidedBottom) {
                object->isActive = false;
@@ -138,10 +135,7 @@ void Entity::CheckCollisionsX(Entity *objects, int objectCount)
                collidedLeft = true;
            }
            if (collidedRight || collidedLeft) {
-               lives-= 1;
-               if (lives == 0) {
-                   isActive = false;
-               }
+               lifeLoss = true;
            }
        }
    }

@@ -17,6 +17,13 @@ float menu_data[] =
 
 void Menu::Initialize() {
     
+    Mix_Music* music;
+    
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
+    music = Mix_LoadMUS("The Entertainer.mp3");
+    Mix_PlayMusic(music, -1);
+    Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
+    
     state.nextScene = -1;
     
     GLuint fontTextureID = Util::LoadTexture("font2.png");
