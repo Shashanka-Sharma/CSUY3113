@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF69328E26B999160040ABDC /* Effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF69328C26B999160040ABDC /* Effects.cpp */; };
 		CF7A71D026A749E6000903FA /* tileset.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF7A71CE26A749D5000903FA /* tileset.png */; };
 		CF7A71D426A74A8B000903FA /* Map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71D226A74A8B000903FA /* Map.cpp */; };
 		CF7A71D926A88D7C000903FA /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7A71D726A88D7C000903FA /* Util.cpp */; };
@@ -47,6 +48,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF69328C26B999160040ABDC /* Effects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Effects.cpp; sourceTree = "<group>"; };
+		CF69328D26B999160040ABDC /* Effects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Effects.h; sourceTree = "<group>"; };
 		CF7A71CE26A749D5000903FA /* tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tileset.png; sourceTree = "<group>"; };
 		CF7A71D226A74A8B000903FA /* Map.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Map.cpp; sourceTree = "<group>"; };
 		CF7A71D326A74A8B000903FA /* Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 				CF7A71E226A8A1BD000903FA /* Level1.h */,
 				CF7A71E626A8A6E2000903FA /* Level2.cpp */,
 				CF7A71E726A8A6E2000903FA /* Level2.h */,
+				CF69328C26B999160040ABDC /* Effects.cpp */,
+				CF69328D26B999160040ABDC /* Effects.h */,
 			);
 			path = SDLProject;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */,
 				CF7A71E826A8A6E2000903FA /* Level2.cpp in Sources */,
 				CF7A71D926A88D7C000903FA /* Util.cpp in Sources */,
+				CF69328E26B999160040ABDC /* Effects.cpp in Sources */,
 				CF7A71E326A8A1BD000903FA /* Level1.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

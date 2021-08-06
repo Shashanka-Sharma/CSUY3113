@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF6932B426BCEF640040ABDC /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6932B226BCEF640040ABDC /* Entity.cpp */; };
+		CF6932B826BCEF710040ABDC /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6932B626BCEF710040ABDC /* Mesh.cpp */; };
+		CF6932BC26BCEF800040ABDC /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6932BA26BCEF800040ABDC /* Util.cpp */; };
+		CF6932C026BCEF950040ABDC /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6932BE26BCEF950040ABDC /* Scene.cpp */; };
+		CF6932C426BCEFCA0040ABDC /* Menu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6932C226BCEFCA0040ABDC /* Menu.cpp */; };
+		CF6932C826BCEFDA0040ABDC /* Level1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6932C626BCEFDA0040ABDC /* Level1.cpp */; };
+		CF6932CC26BCEFE60040ABDC /* Finale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF6932CA26BCEFE60040ABDC /* Finale.cpp */; };
+		CF6932D326BD79970040ABDC /* Fantasia Fantasia.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932D026BD790B0040ABDC /* Fantasia Fantasia.mp3 */; };
+		CF6932D526BD79990040ABDC /* Werq.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932CF26BD790B0040ABDC /* Werq.mp3 */; };
+		CF6932D726BD799B0040ABDC /* minotaur.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932D126BD79160040ABDC /* minotaur.png */; };
+		CF6932D926BD799D0040ABDC /* floor.JPG in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932D226BD79420040ABDC /* floor.JPG */; };
+		CF6932DC26BD7A290040ABDC /* font2.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932DB26BD7A230040ABDC /* font2.png */; };
+		CF6932E026BD97C00040ABDC /* wall.JPG in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932DF26BD97BB0040ABDC /* wall.JPG */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -25,12 +38,38 @@
 			dstSubfolderSpec = 6;
 			files = (
 				DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */,
+				CF6932D326BD79970040ABDC /* Fantasia Fantasia.mp3 in CopyFiles */,
+				CF6932D726BD799B0040ABDC /* minotaur.png in CopyFiles */,
+				CF6932DC26BD7A290040ABDC /* font2.png in CopyFiles */,
+				CF6932E026BD97C00040ABDC /* wall.JPG in CopyFiles */,
+				CF6932D926BD799D0040ABDC /* floor.JPG in CopyFiles */,
+				CF6932D526BD79990040ABDC /* Werq.mp3 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF6932B226BCEF640040ABDC /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		CF6932B326BCEF640040ABDC /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		CF6932B626BCEF710040ABDC /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		CF6932B726BCEF710040ABDC /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		CF6932BA26BCEF800040ABDC /* Util.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		CF6932BB26BCEF800040ABDC /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		CF6932BE26BCEF950040ABDC /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		CF6932BF26BCEF950040ABDC /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		CF6932C226BCEFCA0040ABDC /* Menu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Menu.cpp; sourceTree = "<group>"; };
+		CF6932C326BCEFCA0040ABDC /* Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		CF6932C626BCEFDA0040ABDC /* Level1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Level1.cpp; sourceTree = "<group>"; };
+		CF6932C726BCEFDA0040ABDC /* Level1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
+		CF6932CA26BCEFE60040ABDC /* Finale.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Finale.cpp; sourceTree = "<group>"; };
+		CF6932CB26BCEFE60040ABDC /* Finale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Finale.h; sourceTree = "<group>"; };
+		CF6932CF26BD790B0040ABDC /* Werq.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Werq.mp3; sourceTree = "<group>"; };
+		CF6932D026BD790B0040ABDC /* Fantasia Fantasia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fantasia Fantasia.mp3"; sourceTree = "<group>"; };
+		CF6932D126BD79160040ABDC /* minotaur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minotaur.png; sourceTree = "<group>"; };
+		CF6932D226BD79420040ABDC /* floor.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floor.JPG; sourceTree = "<group>"; };
+		CF6932DB26BD7A230040ABDC /* font2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = font2.png; path = "../../../Project 5/SDLProject 5/SDLProject/font2.png"; sourceTree = "<group>"; };
+		CF6932DF26BD97BB0040ABDC /* wall.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.JPG; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* SDLProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDLProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -87,6 +126,26 @@
 				DBDF1B5C2323DE8D007CECB1 /* shaders */,
 				DBDF1B5A2323DE8D007CECB1 /* stb_image.h */,
 				DBDF1B522323DE3F007CECB1 /* main.cpp */,
+				CF6932B226BCEF640040ABDC /* Entity.cpp */,
+				CF6932B326BCEF640040ABDC /* Entity.h */,
+				CF6932B626BCEF710040ABDC /* Mesh.cpp */,
+				CF6932B726BCEF710040ABDC /* Mesh.h */,
+				CF6932BA26BCEF800040ABDC /* Util.cpp */,
+				CF6932BB26BCEF800040ABDC /* Util.h */,
+				CF6932BE26BCEF950040ABDC /* Scene.cpp */,
+				CF6932BF26BCEF950040ABDC /* Scene.h */,
+				CF6932C226BCEFCA0040ABDC /* Menu.cpp */,
+				CF6932C326BCEFCA0040ABDC /* Menu.h */,
+				CF6932C626BCEFDA0040ABDC /* Level1.cpp */,
+				CF6932C726BCEFDA0040ABDC /* Level1.h */,
+				CF6932CA26BCEFE60040ABDC /* Finale.cpp */,
+				CF6932CB26BCEFE60040ABDC /* Finale.h */,
+				CF6932D026BD790B0040ABDC /* Fantasia Fantasia.mp3 */,
+				CF6932CF26BD790B0040ABDC /* Werq.mp3 */,
+				CF6932D126BD79160040ABDC /* minotaur.png */,
+				CF6932DB26BD7A230040ABDC /* font2.png */,
+				CF6932DF26BD97BB0040ABDC /* wall.JPG */,
+				CF6932D226BD79420040ABDC /* floor.JPG */,
 			);
 			path = SDLProject;
 			sourceTree = "<group>";
@@ -159,8 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF6932C026BCEF950040ABDC /* Scene.cpp in Sources */,
 				DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */,
+				CF6932B426BCEF640040ABDC /* Entity.cpp in Sources */,
+				CF6932B826BCEF710040ABDC /* Mesh.cpp in Sources */,
+				CF6932C826BCEFDA0040ABDC /* Level1.cpp in Sources */,
+				CF6932C426BCEFCA0040ABDC /* Menu.cpp in Sources */,
+				CF6932CC26BCEFE60040ABDC /* Finale.cpp in Sources */,
 				DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */,
+				CF6932BC26BCEF800040ABDC /* Util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
