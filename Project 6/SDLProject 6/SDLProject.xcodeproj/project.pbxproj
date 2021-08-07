@@ -20,6 +20,7 @@
 		CF6932D926BD799D0040ABDC /* floor.JPG in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932D226BD79420040ABDC /* floor.JPG */; };
 		CF6932DC26BD7A290040ABDC /* font2.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932DB26BD7A230040ABDC /* font2.png */; };
 		CF6932E026BD97C00040ABDC /* wall.JPG in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932DF26BD97BB0040ABDC /* wall.JPG */; };
+		CF6932E426BE3B690040ABDC /* cube.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932E326BE3B620040ABDC /* cube.obj */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -43,6 +44,7 @@
 				CF6932DC26BD7A290040ABDC /* font2.png in CopyFiles */,
 				CF6932E026BD97C00040ABDC /* wall.JPG in CopyFiles */,
 				CF6932D926BD799D0040ABDC /* floor.JPG in CopyFiles */,
+				CF6932E426BE3B690040ABDC /* cube.obj in CopyFiles */,
 				CF6932D526BD79990040ABDC /* Werq.mp3 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +72,7 @@
 		CF6932D226BD79420040ABDC /* floor.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floor.JPG; sourceTree = "<group>"; };
 		CF6932DB26BD7A230040ABDC /* font2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = font2.png; path = "../../../Project 5/SDLProject 5/SDLProject/font2.png"; sourceTree = "<group>"; };
 		CF6932DF26BD97BB0040ABDC /* wall.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wall.JPG; sourceTree = "<group>"; };
+		CF6932E326BE3B620040ABDC /* cube.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = cube.obj; path = "../../../Practice Code/SDL3D/SDLProject/cube.obj"; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* SDLProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDLProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 				CF6932D126BD79160040ABDC /* minotaur.png */,
 				CF6932DB26BD7A230040ABDC /* font2.png */,
 				CF6932DF26BD97BB0040ABDC /* wall.JPG */,
+				CF6932E326BE3B620040ABDC /* cube.obj */,
 				CF6932D226BD79420040ABDC /* floor.JPG */,
 			);
 			path = SDLProject;

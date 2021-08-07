@@ -76,7 +76,7 @@ void Initialize() {
     sceneList[1] = new Level1();
     sceneList[2] = new Finale();
     
-    SwitchToScene(sceneList[1]);
+    SwitchToScene(sceneList[0]);
 
     
     GLuint fontTextureID = Util::LoadTexture("font2.png");
