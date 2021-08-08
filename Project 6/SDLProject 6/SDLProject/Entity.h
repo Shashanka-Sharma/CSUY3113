@@ -14,7 +14,7 @@
 #include "ShaderProgram.h"
 #include "Mesh.h"
 
-enum EntityType { PLAYER, PLATFORM, ENEMY, CUBE, SHIP, FLOOR, CRATE };
+enum EntityType { PLAYER, ENEMY, FLOOR, WALL, WINTILE };
 
 class Entity {
 public:
@@ -32,6 +32,7 @@ public:
     float height;
     float depth;
     bool isActive = true;
+    bool winner = false;
 
     GLuint textureID;
     Mesh* mesh;

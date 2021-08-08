@@ -31,14 +31,14 @@ void Entity::Update(float deltaTime, Entity *player, Entity *objects, int object
 {
     glm::vec3 previousPosition = position;
     
-    if (billboard) {
-        float directionX = position.x - player->position.x;
-        float directionZ = position.z - player->position.z;
-        rotation.y = glm::degrees(atan2f(directionX, directionZ));
-        
-        velocity.z = cos(glm::radians(rotation.y)) * -1.0f;
-        velocity.x = sin(glm::radians(rotation.y)) * -1.0f;
-    }
+//    if (billboard) {
+//        float directionX = position.x - player->position.x;
+//        float directionZ = position.z - player->position.z;
+//        rotation.y = glm::degrees(atan2f(directionX, directionZ));
+//
+//        velocity.z = cos(glm::radians(rotation.y)) * -1.0f;
+//        velocity.x = sin(glm::radians(rotation.y)) * -1.0f;
+//    }
     
     velocity += acceleration * deltaTime;
     position += velocity * deltaTime;
@@ -50,20 +50,29 @@ void Entity::Update(float deltaTime, Entity *player, Entity *objects, int object
         // Ignore collisions with the floor
         if (objects[i].entityType == FLOOR) continue;
         
+        if (objects[i].entityType == ENEMY) {
+            isActive = false;
+        }
+        
         if (CheckCollision(&objects[i])) {
+            if (objects[i].entityType == ENEMY) {
+                isActive = false;
+            }
+            else {
             position = previousPosition;
             break;
+            }
             }
         }
     }
     
-    if (entityType == CUBE) {
-        rotation.y += 45 * deltaTime;
-        rotation.z += 45 * deltaTime;
-    }
-    else if (entityType == ENEMY) {
-        rotation.y += 30 * deltaTime;
-    }
+//    if (entityType == CUBE) {
+//        rotation.y += 45 * deltaTime;
+//        rotation.z += 45 * deltaTime;
+//    }
+//    else if (entityType == ENEMY) {
+//        rotation.y += 30 * deltaTime;
+//    }
 
     
     modelMatrix = glm::mat4(1.0f);

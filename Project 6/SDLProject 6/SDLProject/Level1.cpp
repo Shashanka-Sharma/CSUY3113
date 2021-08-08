@@ -1,6 +1,7 @@
 #include "Level1.h"
-#define OBJECT_COUNT 4
-#define ENEMY_COUNT 1
+#define OBJECT_COUNT 10
+#define ENEMY_COUNT 4
+#define WIN_COUNT 10
 
 void Level1::Initialize() {
     
@@ -8,7 +9,7 @@ void Level1::Initialize() {
     
     state.player = new Entity();
     state.player->entityType = PLAYER;
-    state.player->position = glm::vec3(0, 0.75f, 0);
+    state.player->position = glm::vec3(0, 0.75f, 10);
     state.player->acceleration = glm::vec3(0, 0, 0);
     state.player->speed = 1.0f;
     
@@ -24,39 +25,57 @@ void Level1::Initialize() {
     state.objects[0].position = glm::vec3(0,-0.25f,0);
     state.objects[0].scale = glm::vec3(20,0.5f,20);
     
-//    GLuint crateTextureID = Util::LoadTexture("crate1_diffuse.png");
-//    Mesh* crateMesh = new Mesh();
-//    crateMesh->LoadOBJ("cube.obj", 1);
-//
-//    state.objects[1].textureID = crateTextureID;
-//    state.objects[1].mesh = crateMesh;
-//    state.objects[1].position = glm::vec3(0,0.5,-5);
-//    state.objects[1].entityType = CRATE;
-//
-//    state.objects[2].textureID = crateTextureID;
-//    state.objects[2].mesh = crateMesh;
-//    state.objects[2].position = glm::vec3(-1,0.5,-5);
-//    state.objects[2].entityType = CRATE;
+    GLuint wallTextureID = Util::LoadTexture("wall.JPG");
+    Mesh* wallMesh = new Mesh();
+    wallMesh->LoadOBJ("cube.obj", 1);
     
-//    state.objects[3].textureID = crateTextureID;
-//    state.objects[3].mesh = crateMesh;
-//    state.objects[3].position = glm::vec3(0,1.5,-5);
-//    state.objects[3].entityType = CRATE;
+    GLuint winTextureID = Util::LoadTexture("winTile.jpg");
+    Mesh* winMesh = new Mesh();
+    winMesh->LoadOBJ("cube.obj", 1);
+    
+    for (size_t i = 1; i < WIN_COUNT; i++) {
+        state.objects[i].textureID = winTextureID;
+        state.objects[i].mesh = winMesh;
+        state.objects[i].entityType = WINTILE;
+    }
+    
+//    for (size_t i = 1; i < WIN_COUNT; i++) {
+//        state.objects[i].textureID = winTextureID;
+//        state.objects[i].mesh = winMesh;
+//        state.objects[i].entityType = WINTILE;
+//    }
+    state.objects[1].position = glm::vec3(9.5,0.5,-9.5);
+    state.objects[2].position = glm::vec3(9.5,1.5,-9.5);
+    state.objects[3].position = glm::vec3(9.5,2.5,-9.5);
+    state.objects[4].position = glm::vec3(9.5,3.5,-9.5);
+    state.objects[5].position = glm::vec3(9.5,4.5,-9.5);
+    state.objects[6].position = glm::vec3(9.5,5.5,-9.5);
+    state.objects[7].position = glm::vec3(9.5,6.5,-9.5);
+    state.objects[8].position = glm::vec3(9.5,7.5,-9.5);
+    state.objects[9].position = glm::vec3(9.5,8.5,-9.5);
+    
     
     state.enemies = new Entity[ENEMY_COUNT];
     
-    GLuint enemyTextureID = Util::LoadTexture("minotaur.png");
+    GLuint enemyTextureID = Util::LoadTexture("character_0008.png");
     
     for (int i = 0; i < ENEMY_COUNT; i++) {
          state.enemies[i].billboard = true;
          state.enemies[i].textureID = enemyTextureID;
          state.enemies[i].position = glm::vec3(rand() % 20 - 10, 0.5, rand() % 20 - 10);
-         state.enemies[i].rotation = glm::vec3(0, 0, 0);
-         state.enemies[i].acceleration = glm::vec3(0, 0, 0);
     }
+    state.enemies[0].position = glm::vec3(0,1,0);
+    state.enemies[1].position = glm::vec3(-1,1,0);
+    state.enemies[2].position = glm::vec3(-2,1,0);
+    state.enemies[3].position = glm::vec3(-1,0,0);
+    
 }
 
 void Level1::Update(float deltaTime) {
+    
+    if (state.player->position.z <= -9) {
+        state.nextScene = 2;
+    }
     state.player->Update(deltaTime, state.player, state.objects, OBJECT_COUNT);
     
     for (int i = 0; i < OBJECT_COUNT; i++) {
@@ -66,6 +85,7 @@ void Level1::Update(float deltaTime) {
     for (int i = 0; i < ENEMY_COUNT; i++) {
         state.enemies[i].Update(deltaTime ,state.player, state.objects, OBJECT_COUNT);
     }
+    
 }
 
 void Level1::Render(ShaderProgram *program) {

@@ -28,9 +28,6 @@ bool gameIsRunning = true;
 ShaderProgram program;
 glm::mat4 viewMatrix, modelMatrix, projectionMatrix;
 
-#define OBJECT_COUNT 4
-#define ENEMY_COUNT 10
-
 Scene *currentScene;
 Scene *sceneList[3];
 
@@ -184,6 +181,7 @@ int main(int argc, char* argv[]) {
     while (gameIsRunning) {
         ProcessInput();
         Update();
+        if (currentScene->state.nextScene >= 0) SwitchToScene(sceneList[currentScene->state.nextScene]);
         Render();
     }
     
