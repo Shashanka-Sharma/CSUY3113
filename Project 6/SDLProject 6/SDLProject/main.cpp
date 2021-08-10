@@ -27,6 +27,7 @@ bool gameIsRunning = true;
 
 ShaderProgram program;
 glm::mat4 viewMatrix, modelMatrix, projectionMatrix;
+glm::mat4 uiViewMatrix, uiProjectionMatrix;
 
 Scene *currentScene;
 Scene *sceneList[3];
@@ -53,6 +54,8 @@ void Initialize() {
     viewMatrix = glm::mat4(1.0f);
     modelMatrix = glm::mat4(1.0f);
     projectionMatrix = glm::perspective(glm::radians(45.0f), 1.777f, 0.1f, 100.0f);
+    uiViewMatrix = glm::mat4(1.0f);
+    uiProjectionMatrix = glm::ortho(-6.4f, 6.4f, -3.6f, 3.6f, -1.0f, 1.0f);
     
     program.SetProjectionMatrix(projectionMatrix);
     program.SetViewMatrix(viewMatrix);
@@ -103,6 +106,7 @@ void ProcessInput() {
     }
     const Uint8 *keys = SDL_GetKeyboardState(NULL);
     
+    
     if (keys[SDL_SCANCODE_A]) {
         currentScene->state.player->rotation.y += 1.0f;
     } else if (keys[SDL_SCANCODE_D]) {
@@ -112,6 +116,7 @@ void ProcessInput() {
     currentScene->state.player->velocity.x = 0;
     currentScene->state.player->velocity.z = 0;
     
+    if (currentScene->state.player->isActive) {
     if (keys[SDL_SCANCODE_W]) {
         currentScene->state.player->velocity.z = cos(glm::radians(currentScene->state.player->rotation.y)) * -2.0f;
         currentScene->state.player->velocity.x = sin(glm::radians(currentScene->state.player->rotation.y)) * -2.0f;
@@ -119,6 +124,7 @@ void ProcessInput() {
         currentScene->state.player->velocity.z = cos(glm::radians(currentScene->state.player->rotation.y)) * 2.0f;
         currentScene->state.player->velocity.x = sin(glm::radians(currentScene->state.player->rotation.y)) * 2.0f;
     }
+}
 }
 
 #define FIXED_TIMESTEP 0.0166666f
@@ -155,12 +161,17 @@ void Render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     program.SetViewMatrix(viewMatrix);
+    program.SetProjectionMatrix(projectionMatrix);
     
     currentScene->Render(&program);
     
+    program.SetViewMatrix(uiViewMatrix);
+    program.SetProjectionMatrix(uiProjectionMatrix);
+    
     if (currentScene->state.player->isActive == false) {
-            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 0.5f, -0.25f, glm::vec3(0, 0,0));
-    }    
+            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 1.5f, -0.25f, glm::vec3(-1, 2,0));
+    }
+
     SDL_GL_SwapWindow(displayWindow);
 }
 

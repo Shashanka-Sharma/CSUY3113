@@ -10,7 +10,6 @@ void Level1::Initialize() {
     state.player = new Entity();
     state.player->entityType = PLAYER;
     state.player->position = glm::vec3(-9.5, 0.5, 8.0);
-    //state.player->position = glm::vec3(0,0.5,0);
     state.player->acceleration = glm::vec3(0, 0, -2);
     state.player->speed = 1.0f;
     
@@ -247,11 +246,7 @@ void Level1::Initialize() {
     state.objects[178].position = glm::vec3(-5.5, 0.5, 9.5);
     state.objects[179].position = glm::vec3(1.5, 0.5, 3.5);
     state.objects[180].position = glm::vec3(-8.5, 0.5, 9.5);
-    
-    
-    
-    
-    
+
     state.enemies = new Entity[ENEMY_COUNT];
     
     GLuint enemyTextureID = Util::LoadTexture("character_0008.png");
@@ -272,12 +267,10 @@ void Level1::Update(float deltaTime) {
     if (state.player->position.z <= -9) {
         state.nextScene = 2;
     }
-    else if (state.player->isActive == false) {
-        state.nextScene = 2;
+    else if (state.player->position.x < -10) {
+        state.player->isActive = false;
     }
-//    else if (state.player->position.z >= 9.5) {
-//        state.nextScene = 2;
-//    }
+    
     state.player->Update(deltaTime, state.player, state.objects, OBJECT_COUNT);
     
     for (int i = 0; i < OBJECT_COUNT; i++) {
