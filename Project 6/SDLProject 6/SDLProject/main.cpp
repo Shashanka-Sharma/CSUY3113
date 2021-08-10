@@ -159,15 +159,8 @@ void Render() {
     currentScene->Render(&program);
     
     if (currentScene->state.player->isActive == false) {
-
-            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 0.5f, -0.25f, glm::vec3(-1, 2,0));
-    }
-    
-    if (currentScene != sceneList[0] && currentScene != sceneList[2] )
-    {
-//        Util::DrawText(&program, currentScene->state.fontTextureID, "Lives: " + std::to_string(lives), 0.5f, -0.25f, glm::vec3 (-4.5f,3.0f,0));
-    }
-    
+            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 0.5f, -0.25f, glm::vec3(0, 0,0));
+    }    
     SDL_GL_SwapWindow(displayWindow);
 }
 

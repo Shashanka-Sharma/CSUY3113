@@ -15,6 +15,8 @@
 #include "Mesh.h"
 
 enum EntityType { PLAYER, ENEMY, FLOOR, WALL, WINTILE };
+enum AIType { WALKER, WAITANDGO};
+enum AIState {IDLE, WALKING, ATTACKING};
 
 class Entity {
 public:
