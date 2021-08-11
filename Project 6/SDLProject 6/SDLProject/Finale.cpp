@@ -24,6 +24,6 @@ void Finale::Render(ShaderProgram *program) {
     
     Util::DrawText(program, state.fontTextureID,"You Escaped the Labyrinth!", 0.5f, -0.25f, glm::vec3(-2.5f,1,-6));
     Util::DrawText(program, state.fontTextureID, "Images from Itch.io & seamless Textures", 0.5f, -0.25, glm::vec3(-2.5f,0,-6));
-    Util::DrawText(program, state.fontTextureID, "Music by Kevin Macleod", 0.5f, -0.25f, glm::vec3(-2.5f,-1,-6));
+    Util::DrawText(program, state.fontTextureID, "Music by Kevin Macleod and Dylan Sitts", 0.5f, -0.25f, glm::vec3(-2.5f,-1,-6));
     
 }

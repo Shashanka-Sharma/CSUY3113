@@ -6,7 +6,7 @@ void Menu::Initialize() {
     
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
     music = Mix_LoadMUS("Werq.mp3");
-    Mix_PlayMusic(music, -1);
+    Mix_PlayMusic(music, 0);
     Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
     
     state.nextScene = -1;

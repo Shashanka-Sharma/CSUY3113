@@ -23,6 +23,8 @@
 		CF6932E426BE3B690040ABDC /* cube.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932E326BE3B620040ABDC /* cube.obj */; };
 		CF6932E726BF4FAF0040ABDC /* character_0008.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932E626BF4FAC0040ABDC /* character_0008.png */; };
 		CF6932EA26BF537A0040ABDC /* winTile.JPG in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932E926BF53760040ABDC /* winTile.JPG */; };
+		CF6932EE26C486BA0040ABDC /* FishGame.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932ED26C486AF0040ABDC /* FishGame.wav */; };
+		CF6932F226C492740040ABDC /* loseSound.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF6932F126C4924D0040ABDC /* loseSound.wav */; };
 		DBDF1B532323DE3F007CECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B522323DE3F007CECB1 /* main.cpp */; };
 		DBDF1B5E2323DE8D007CECB1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBDF1B5D2323DE8D007CECB1 /* ShaderProgram.cpp */; };
 		DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */ = {isa = PBXBuildFile; fileRef = DBDF1B5C2323DE8D007CECB1 /* shaders */; };
@@ -47,6 +49,8 @@
 				CF6932E026BD97C00040ABDC /* wall.JPG in CopyFiles */,
 				CF6932D926BD799D0040ABDC /* floor.JPG in CopyFiles */,
 				CF6932E726BF4FAF0040ABDC /* character_0008.png in CopyFiles */,
+				CF6932F226C492740040ABDC /* loseSound.wav in CopyFiles */,
+				CF6932EE26C486BA0040ABDC /* FishGame.wav in CopyFiles */,
 				CF6932EA26BF537A0040ABDC /* winTile.JPG in CopyFiles */,
 				CF6932E426BE3B690040ABDC /* cube.obj in CopyFiles */,
 				CF6932D526BD79990040ABDC /* Werq.mp3 in CopyFiles */,
@@ -79,6 +83,8 @@
 		CF6932E326BE3B620040ABDC /* cube.obj */ = {isa = PBXFileReference; lastKnownFileType = text; name = cube.obj; path = "../../../Practice Code/SDL3D/SDLProject/cube.obj"; sourceTree = "<group>"; };
 		CF6932E626BF4FAC0040ABDC /* character_0008.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = character_0008.png; path = ../../../kenney_pixelplatformer/Characters/character_0008.png; sourceTree = "<group>"; };
 		CF6932E926BF53760040ABDC /* winTile.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = winTile.JPG; sourceTree = "<group>"; };
+		CF6932ED26C486AF0040ABDC /* FishGame.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = FishGame.wav; sourceTree = "<group>"; };
+		CF6932F126C4924D0040ABDC /* loseSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = loseSound.wav; sourceTree = "<group>"; };
 		DBDF1B4F2323DE3F007CECB1 /* SDLProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDLProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBDF1B522323DE3F007CECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DBDF1B592323DE8D007CECB1 /* ShaderProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderProgram.h; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 				CF6932D126BD79160040ABDC /* minotaur.png */,
 				CF6932DB26BD7A230040ABDC /* font2.png */,
 				CF6932DF26BD97BB0040ABDC /* wall.JPG */,
+				CF6932F126C4924D0040ABDC /* loseSound.wav */,
+				CF6932ED26C486AF0040ABDC /* FishGame.wav */,
 				CF6932E326BE3B620040ABDC /* cube.obj */,
 				CF6932E626BF4FAC0040ABDC /* character_0008.png */,
 				CF6932D226BD79420040ABDC /* floor.JPG */,

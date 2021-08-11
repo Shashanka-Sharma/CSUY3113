@@ -32,6 +32,9 @@ glm::mat4 uiViewMatrix, uiProjectionMatrix;
 Scene *currentScene;
 Scene *sceneList[3];
 
+Mix_Chunk* soundEffect;
+
+
 void SwitchToScene(Scene *scene) {
     currentScene = scene;
     currentScene->Initialize();
@@ -77,11 +80,13 @@ void Initialize() {
     sceneList[2] = new Finale();
     
     SwitchToScene(sceneList[0]);
-
-    
     GLuint fontTextureID = Util::LoadTexture("font2.png");
-    currentScene->state.fontTextureID = fontTextureID;
     
+    for (int i = 0; i< 3; i++) {
+        sceneList[i]->state.fontTextureID = fontTextureID;
+    }
+    
+    soundEffect = Mix_LoadWAV("loseSound.wav");
 }
 
 void ProcessInput() {
@@ -169,7 +174,10 @@ void Render() {
     program.SetProjectionMatrix(uiProjectionMatrix);
     
     if (currentScene->state.player->isActive == false) {
-            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 1.5f, -0.25f, glm::vec3(-1, 2,0));
+    
+            Mix_FadeInChannel(-1, soundEffect, 0, 1000);
+            Mix_VolumeChunk(soundEffect, MIX_MAX_VOLUME / 4);
+            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 1.5f, -0.25f, glm::vec3(-5, 0,0));
     }
 
     SDL_GL_SwapWindow(displayWindow);
@@ -190,5 +198,6 @@ int main(int argc, char* argv[]) {
     }
     
     Shutdown();
+    Mix_FreeChunk(soundEffect);
     return 0;
 }
