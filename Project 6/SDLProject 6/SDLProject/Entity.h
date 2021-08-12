@@ -35,6 +35,7 @@ public:
     float depth;
     bool isActive = true;
     bool winner = false;
+    bool playSound = false;
 
     GLuint textureID;
     Mesh* mesh;

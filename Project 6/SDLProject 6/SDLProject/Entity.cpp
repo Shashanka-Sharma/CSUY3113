@@ -34,7 +34,7 @@ void Entity::Update(float deltaTime, Entity *player, Entity *objects, int object
     glm::vec3 previousPosition = position;
     
     if (billboard) {
-        if (glm::distance(position, player->position) < 6) {
+        if (glm::distance(position, player->position) < 9) {
             float directionX = position.x - player->position.x;
             float directionZ = position.z - player->position.z;
             rotation.y = glm::degrees(atan2f(directionX, directionZ));
@@ -55,26 +55,16 @@ void Entity::Update(float deltaTime, Entity *player, Entity *objects, int object
         if (objects[i].entityType == FLOOR) continue;
         
         if (CheckCollision(&objects[i])) {
-            if (objects[i].entityType == ENEMY) {
-                isActive = false;
-                break;
-            }
-            else {
             position = previousPosition;
             break;
-                }
             }
         }
     for (int i = 0; i < enemyCount; i++) {
-        if (enemies[i].entityType == FLOOR) continue;
         
         if (CheckCollision(&enemies[i])) {
-            if (enemies[i].entityType == ENEMY) {
-                isActive = false;
-                break;
+            isActive = false;
             }
-    }
-    }
+        }
     }
     modelMatrix = glm::mat4(1.0f);
     modelMatrix = glm::translate(modelMatrix, position);

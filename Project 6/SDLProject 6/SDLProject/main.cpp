@@ -24,6 +24,7 @@
 
 SDL_Window* displayWindow;
 bool gameIsRunning = true;
+bool playSound = false;
 
 ShaderProgram program;
 glm::mat4 viewMatrix, modelMatrix, projectionMatrix;
@@ -159,7 +160,7 @@ void Update() {
     viewMatrix = glm::rotate(viewMatrix,
         glm::radians(currentScene->state.player->rotation.y), glm::vec3(0, -1.0f, 0));
     viewMatrix = glm::translate(viewMatrix, -currentScene->state.player->position);
-}
+    }
 
 
 void Render() {
@@ -174,10 +175,13 @@ void Render() {
     program.SetProjectionMatrix(uiProjectionMatrix);
     
     if (currentScene->state.player->isActive == false) {
-    
-            Mix_PlayChannel(-1, soundEffect, 0);
-            Mix_VolumeChunk(soundEffect, MIX_MAX_VOLUME / 20);
-            Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 1.5f, -0.25f, glm::vec3(-5, 0,0));
+        Mix_HaltMusic();
+        if (playSound == false) {
+        Mix_PlayChannel(-1, soundEffect, 0);
+        Mix_VolumeChunk(soundEffect, MIX_MAX_VOLUME / 20);
+        playSound = true;
+        }
+        Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 1.5f, -0.25f, glm::vec3(-5, 0,0));
     }
 
     SDL_GL_SwapWindow(displayWindow);
