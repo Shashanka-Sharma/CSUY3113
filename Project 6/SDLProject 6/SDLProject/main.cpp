@@ -175,8 +175,8 @@ void Render() {
     
     if (currentScene->state.player->isActive == false) {
     
-            Mix_FadeInChannel(-1, soundEffect, 0, 1000);
-            Mix_VolumeChunk(soundEffect, MIX_MAX_VOLUME / 4);
+            Mix_PlayChannel(-1, soundEffect, 0);
+            Mix_VolumeChunk(soundEffect, MIX_MAX_VOLUME / 20);
             Util::DrawText(&program, currentScene->state.fontTextureID, "You Lose!", 1.5f, -0.25f, glm::vec3(-5, 0,0));
     }
 

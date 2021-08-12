@@ -19,7 +19,7 @@ void Menu::Initialize() {
    
 }
 void Menu::Update(float deltaTime) {
-    state.player->Update(deltaTime, state.player, state.enemies, 0);
+    state.player->Update(deltaTime, state.player, state.enemies, 0, NULL, 0);
 }
 void Menu::Render(ShaderProgram *program) {
     

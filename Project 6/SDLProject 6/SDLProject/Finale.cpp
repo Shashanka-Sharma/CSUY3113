@@ -17,7 +17,7 @@ void Finale::Initialize() {
     state.player = new Entity();
 }
 void Finale::Update(float deltaTime) {
-    state.player->Update(deltaTime, state.player, state.enemies, 0);
+    state.player->Update(deltaTime, state.player, state.enemies, 0, NULL, 0);
 }
 void Finale::Render(ShaderProgram *program) {
     

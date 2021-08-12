@@ -44,7 +44,7 @@ public:
     Entity();
     
     bool CheckCollision(Entity *other);
-    void Update(float deltaTime, Entity *player, Entity *objects, int objectCount);
+    void Update(float deltaTime, Entity *player, Entity *objects, int objectCount, Entity* enemies, int enemyCount);
     void Render(ShaderProgram *program);
     void DrawBillboard(ShaderProgram *program);
 };

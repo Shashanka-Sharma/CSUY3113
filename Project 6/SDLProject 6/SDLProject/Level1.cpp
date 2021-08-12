@@ -271,14 +271,14 @@ void Level1::Update(float deltaTime) {
         state.player->isActive = false;
     }
     
-    state.player->Update(deltaTime, state.player, state.objects, OBJECT_COUNT);
+    state.player->Update(deltaTime, state.player, state.objects, OBJECT_COUNT, state.enemies,ENEMY_COUNT);
     
     for (int i = 0; i < OBJECT_COUNT; i++) {
-        state.objects[i].Update(deltaTime ,state.player, state.objects, OBJECT_COUNT);
+        state.objects[i].Update(deltaTime ,state.player, state.objects, OBJECT_COUNT,state.enemies,ENEMY_COUNT);
     }
     
     for (int i = 0; i < ENEMY_COUNT; i++) {
-        state.enemies[i].Update(deltaTime ,state.player, state.enemies, ENEMY_COUNT);
+        state.enemies[i].Update(deltaTime ,state.player, state.objects, OBJECT_COUNT, state.enemies, ENEMY_COUNT);
     }
     
 }

@@ -29,7 +29,7 @@ bool Entity::CheckCollision(Entity *other)
     return false;
 }
 
-void Entity::Update(float deltaTime, Entity *player, Entity *objects, int objectCount)
+void Entity::Update(float deltaTime, Entity *player, Entity *objects, int objectCount,Entity* enemies, int enemyCount)
 {
     glm::vec3 previousPosition = position;
     
@@ -65,6 +65,16 @@ void Entity::Update(float deltaTime, Entity *player, Entity *objects, int object
                 }
             }
         }
+    for (int i = 0; i < enemyCount; i++) {
+        if (enemies[i].entityType == FLOOR) continue;
+        
+        if (CheckCollision(&enemies[i])) {
+            if (enemies[i].entityType == ENEMY) {
+                isActive = false;
+                break;
+            }
+    }
+    }
     }
     modelMatrix = glm::mat4(1.0f);
     modelMatrix = glm::translate(modelMatrix, position);
